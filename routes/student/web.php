@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Student\DashboardController;
+use App\Http\Controllers\Student\LearnController;
 use App\Http\Controllers\Student\LessonController;
 use App\Http\Controllers\Student\RoomController;
 use Illuminate\Support\Facades\Route;
@@ -24,6 +25,13 @@ Route::middleware('auth', 'role:student')->group(function() {
             Route::get('/', 'index')->name('index');
             Route::get('{lesson}', 'show')->name('show');
             Route::post('{lesson}/start', 'start')->name('start');
+        });
+
+    Route::prefix('learn')
+        ->controller(LearnController::class)
+        ->name('learn.')
+        ->group(function() {
+            Route::get('{item}', 'show')->name('show');
         });
 });
 
