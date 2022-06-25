@@ -2,12 +2,9 @@
 
 use App\Http\Controllers\Student\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Student\Auth\ConfirmablePasswordController;
-use App\Http\Controllers\Student\Auth\EmailVerificationNotificationController;
-use App\Http\Controllers\Student\Auth\EmailVerificationPromptController;
 use App\Http\Controllers\Student\Auth\NewPasswordController;
 use App\Http\Controllers\Student\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Student\Auth\RegisteredUserController;
-use App\Http\Controllers\Student\Auth\VerifyEmailController;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware('guest')->group(function () {

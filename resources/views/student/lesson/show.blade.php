@@ -25,6 +25,11 @@
                         <table class="table table-striped table-hover">
                             @foreach ($lesson->items as $item)
                             <tr>
+                                <td>
+                                    <a href="{{ route('student.learn.show', $item) }}" class="btn rounded-pill btn-info">
+                                        <i class="fas fa-file"></i>
+                                    </a>
+                                </td>
                                 <td class="align-middle">
                                     <a href="{{ route('student.learn.show', $item) }}">{{ $item->name }}</a>
                                 </td>
