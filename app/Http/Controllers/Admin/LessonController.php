@@ -16,6 +16,11 @@ class LessonController extends Controller
         return view('admin.lesson.index');
     }
 
+    public function show(Lesson $lesson)
+    {
+        return view('admin.lesson.show', compact('lesson'));
+    }
+
     public function create()
     {
         $rooms = Room::all();

@@ -50,7 +50,10 @@
             {render: (meta, data, row, type) => {
                 return `
                 <div class="d-flex">
-                    <a href="${row.detailUrl}/edit" class="btn btn-sm btn-success">
+                    <a href="${row.detailUrl}" class="btn btn-sm btn-info">
+                        <i class="fas fa-eye"></i>
+                    </a>
+                    <a href="${row.detailUrl}/edit" class="btn btn-sm btn-success ml-1">
                         <i class="fas fa-pencil-alt"></i>
                     </a>
                     <form action="${row.detailUrl}" method="post">
