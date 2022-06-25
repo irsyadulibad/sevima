@@ -3,7 +3,7 @@
 @section('content')
 <div class="row justify-content-center mt-4">
     @forelse ($lessons as $lesson)
-    <div class="col-3">
+    <div class="col-md-3">
         <div class="card">
             <div class="card-body">
                 <div class="lesson-thumbnail m-auto" style="background-image: url('/storage/assets/lesson/{{ $lesson->thumbnail }}');"></div>
