@@ -1,11 +1,12 @@
-# Sevima Hackathon App
-## Description `coming soon`
+# Learny - Sevima Hackathon App
+## Description
+A learning management application that will make it easier for instructors/teachers to manage their learning content
 
-### Requirements
+## Requirements
 - PHP >= 8
 - MySQL
 
-### Setup & Installation
+## Setup & Installation
 Clone this project
 ```bash
 git clone https://github.com/irsyadulibad/sevima
@@ -23,9 +24,9 @@ cp .env.example .env
 php artisan key:generate
 ```
 
-Run Migrations and Seeders
+Import Database
 ```bash
-php artisan migrate --seed
+mysql -u {USERNAME} -p{PASSWORD} < learny.sql
 ```
 
 Run the Application and Enjoy the Journey :)
@@ -33,7 +34,21 @@ Run the Application and Enjoy the Journey :)
 php artisan serve
 ```
 
+## Getting Started
+- Login as admin with
+    ```yaml
+    url: /admin/login
+    email: admin@gmail.com
+    password: admin123
+    ```
+- Login as student with
+    ```yaml
+    url: /student/login
+    email: student@gmail.com
+    password: student123
+    ```
+
 ### Credits
-[github @irsyadulibad](https://github.com/irsyadulibad)
-[facebook @irsyadulibad.dev](https://facebook.com/irsyadulibad.dev)
-[linkedin @irsyadulibad](https://linkedin.com/in/irsyadulibad)
+- [Github @irsyadulibad](https://github.com/irsyadulibad)
+- [Facebook @irsyadulibad.dev](https://facebook.com/irsyadulibad.dev)
+- [LinkedIn @irsyadulibad](https://linkedin.com/in/irsyadulibad)
