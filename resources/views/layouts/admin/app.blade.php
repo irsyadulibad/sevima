@@ -12,6 +12,7 @@
   <!-- Template CSS -->
   <link rel="stylesheet" href="/assets/stisla/css/style.css">
   <link rel="stylesheet" href="/assets/stisla/css/components.css">
+  @stack('style')
 </head>
 
 <body>
@@ -46,19 +47,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
   <script src="/assets/stisla/js/stisla.js"></script>
 
-  <!-- JS Libraies -->
-  <script src="../node_modules/simpleweather/jquery.simpleWeather.min.js"></script>
-  <script src="../node_modules/chart.js/dist/Chart.min.js"></script>
-  <script src="../node_modules/jqvmap/dist/jquery.vmap.min.js"></script>
-  <script src="../node_modules/jqvmap/dist/maps/jquery.vmap.world.js"></script>
-  <script src="../node_modules/summernote/dist/summernote-bs4.js"></script>
-  <script src="../node_modules/chocolat/dist/js/jquery.chocolat.min.js"></script>
-
   <!-- Template JS File -->
   <script src="/assets/stisla/js/scripts.js"></script>
   <script src="/assets/stisla/js/custom.js"></script>
 
-  <!-- Page Specific JS File -->
-  <script src="/assets/stisla/js/page/index-0.js"></script>
+  @stack('script')
 </body>
 </html>
