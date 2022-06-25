@@ -19,6 +19,11 @@
             <i class="fas fa-layer-group"></i> <span>Rooms</span>
           </a>
         </li>
+        <li class=" @active('admin.lessons') ">
+          <a class="nav-link" href="{{ route('admin.lessons.index') }}">
+            <i class="fas fa-chalkboard-teacher"></i> <span>Lessons</span>
+          </a>
+        </li>
         <li class="nav-item dropdown">
           <a href="#" class="nav-link has-dropdown"><i class="fas fa-th"></i> <span>Bootstrap</span></a>
           <ul class="dropdown-menu">

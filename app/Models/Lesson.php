@@ -6,13 +6,18 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 
-class Room extends Model
+class Lesson extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'name', 'slug'
+        'name', 'slug', 'thumbnail', 'description'
     ];
+
+    public function rooms()
+    {
+        return $this->belongsToMany(Room::class);
+    }
 
     public static function boot()
     {
@@ -20,10 +25,5 @@ class Room extends Model
         static::saving(function($model) {
             $model->slug = Str::slug($model->name);
         });
-    }
-
-    public function lessons()
-    {
-        return $this->belongsToMany(Lesson::class);
     }
 }
