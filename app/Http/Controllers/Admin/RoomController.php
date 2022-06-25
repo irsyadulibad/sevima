@@ -42,12 +42,4 @@ class RoomController extends Controller
         $room->delete();
         return redirect()->back()->with('alert_s', 'Room deleted successfully');
     }
-
-    public function dt()
-    {
-        return datatables(Room::query())
-            ->addIndexColumn()
-            ->addColumn('detailUrl', fn($room) => route('admin.rooms.show', $room))
-            ->toJson();
-    }
 }

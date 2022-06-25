@@ -18,3 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::prefix('datatables')->name('datatables.')->group(function() {
+    Route::get('rooms', [RoomController::class, 'datatables'])->name('rooms');
+});

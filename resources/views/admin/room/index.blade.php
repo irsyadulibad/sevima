@@ -35,7 +35,7 @@
         processing: true,
         serverSide: true,
         ajax: {
-            url: `{{ route('admin.rooms.datatables') }}`
+            url: `{{ route('datatables.rooms') }}`
         },
         columns: [
             {data: 'DT_RowIndex', searchable: false, orderable: false},

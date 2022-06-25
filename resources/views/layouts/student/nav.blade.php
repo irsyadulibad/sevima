@@ -23,10 +23,17 @@
             <li class="nav-item @active('student.dashboard')">
                 <a href="{{ route('student.dashboard') }}" class="nav-link">
                     <span class="sidebar-icon">
-
                         <i class="fas fa-fw fa-fire"></i>
                     </span>
                     <span class="sidebar-text">Dashboard</span>
+                </a>
+            </li>
+            <li class="nav-item @active('student.rooms')">
+                <a href="{{ route('student.rooms.index') }}" class="nav-link">
+                    <span class="sidebar-icon">
+                        <i class="fas fa-fw fa-user-friends"></i>
+                    </span>
+                    <span class="sidebar-text">Classes</span>
                 </a>
             </li>
         </ul>
