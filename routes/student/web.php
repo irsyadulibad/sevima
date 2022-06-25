@@ -32,6 +32,7 @@ Route::middleware('auth', 'role:student')->group(function() {
         ->name('learn.')
         ->group(function() {
             Route::get('{item}', 'show')->name('show');
+            Route::post('{item}', 'store');
         });
 });
 

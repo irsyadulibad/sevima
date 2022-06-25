@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Student;
 
 use App\Http\Controllers\Controller;
 use App\Models\Lesson;
+use App\Services\LessonItemService;
 use App\Services\UserService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -23,7 +24,8 @@ class LessonController extends Controller
                 ->with('alert_e', 'You are not registered in that class yet');
         }
 
-        return view('student.lesson.show', compact('lesson'));
+        $completes = (new LessonItemService($lesson))->completes();
+        return view('student.lesson.show', compact('lesson', 'completes'));
     }
 
     public function start(Lesson $lesson)

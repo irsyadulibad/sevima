@@ -2,8 +2,10 @@
 
 namespace App\Services;
 
+use App\Models\CompleteItem;
 use App\Models\Lesson;
 use App\Models\Room;
+use App\Repository\CompleteItemRepository;
 use Illuminate\Support\Facades\Auth;
 
 class UserService
@@ -28,6 +30,8 @@ class UserService
     {
         $user = Auth::user();
         if(!$user->lessons->contains($lesson->id)) $user->lessons()->attach($lesson->id);
+
+        CompleteItemRepository::create($user, $lesson);
     }
 
     public static function joinRoom(Room $room): void

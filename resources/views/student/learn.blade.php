@@ -29,11 +29,12 @@
                     <i class="fas fa-book me-2"></i> Back to Lesson
                 </a>
 
-                @if ($next)
-                <a href="{{ route('student.learn.show', $next) }}" class="btn btn-primary">
-                    Next <i class="fas fa-angle-right ms-2"></i>
-                </a> 
-                @endif
+                <form action="{{ route('student.learn.show', $item) }}" method="post">
+                    @csrf
+                    <button type="submit" class="btn btn-primary">
+                        Next <i class="fas fa-angle-right ms-2"></i>
+                    </button>
+                </form>
             </div>
         </div>
     </div>

@@ -29,6 +29,11 @@ class Lesson extends Model
         return $this->belongsToMany(User::class);
     }
 
+    public function completeItems()
+    {
+        return $this->hasMany(CompleteItem::class);
+    }
+
     public static function boot()
     {
         parent::boot();
