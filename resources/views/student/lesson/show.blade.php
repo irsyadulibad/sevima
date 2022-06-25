@@ -31,17 +31,13 @@
                                         <i class="fas fa-file"></i>
                                     </a>
                                     @else
-                                    <a href="#" class="btn rounded-pill btn-primary">
+                                    <a href="{{ route('student.learn.show', $item) }}" class="btn rounded-pill btn-secondary">
                                         <i class="fas fa-file"></i>
                                     </a>
                                     @endif
                                 </td>
                                 <td class="align-middle">
-                                    @if(in_array($item->id, $completes))
                                     <a href="{{ route('student.learn.show', $item) }}">{{ $item->name }}</a>
-                                    @else
-                                    <a href="#">{{ $item->name }}</a>
-                                    @endif
                                 </td>
                             </tr>
                             @endforeach
