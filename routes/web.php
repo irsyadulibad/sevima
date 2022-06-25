@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FrontRedirectController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,3 +24,5 @@ Route::middleware('auth')->get('dashboard', function() {
     if($admin) return redirect()->route('admin.dashboard');
     return redirect()->route('student.dashboard');
 });
+
+Route::get('/login', FrontRedirectController::class)->name('login');
