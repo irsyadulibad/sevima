@@ -36,6 +36,14 @@
                     <span class="sidebar-text">Classes</span>
                 </a>
             </li>
+            <li class="nav-item @active('student.lessons')">
+                <a href="{{ route('student.lessons.index') }}" class="nav-link">
+                    <span class="sidebar-icon">
+                        <i class="fas fa-fw fa-book-reader"></i>
+                    </span>
+                    <span class="sidebar-text">Lessons</span>
+                </a>
+            </li>
         </ul>
     </div>
 </nav>

@@ -11,13 +11,17 @@
     <label for="rooms">Rooms</label>
     <select name="rooms[]" id="rooms" class="form-control @error('rooms') is-invalid @enderror" multiple>
         @php
-        if($lesson) $rIds = $lesson->rooms->pluck('id')->toArray();
+        if(isset($lesson)) $rIds = $lesson->rooms->pluck('id')->toArray();
         @endphp
 
         @foreach ($rooms as $room)
-        <option value="{{ $room->id }}" @if(in_array($room->id, $rIds)) selected @endif>
-            {{ $room->name }}
-        </option>
+            @isset($rIds)
+            <option value="{{ $room->id }}" @if(in_array($room->id, $rIds)) selected @endif>
+                {{ $room->name }}
+            </option>
+            @else
+            <option value="{{ $room->id }}">{{ $room->name }}</option>
+            @endisset
         @endforeach
     </select>
 

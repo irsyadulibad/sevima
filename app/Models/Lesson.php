@@ -24,6 +24,11 @@ class Lesson extends Model
         return $this->hasMany(LessonItem::class);
     }
 
+    public function users()
+    {
+        return $this->belongsToMany(User::class);
+    }
+
     public static function boot()
     {
         parent::boot();
