@@ -27,17 +27,13 @@ class UserService
     public static function startLesson(Lesson $lesson)
     {
         $user = Auth::user();
-        $lessons = $user->lessons()->pluck('lesson_id')->toArray();
-
-        if(!in_array($lesson->id, $lessons)) $user->lessons()->attach($lesson->id);
+        if(!$user->lessons->contains($lesson->id)) $user->lessons()->attach($lesson->id);
     }
 
     public static function joinRoom(Room $room): void
     {
         $user = Auth::user();
-        $joinedRooms = $user->rooms()->pluck('room_id')->toArray();
-
-        if(!in_array($room->id, $joinedRooms)) $user->rooms()->attach($room->id);
+        if(!$user->rooms->contains($room->id)) $user->rooms()->attach($room->id);
     }
 
     public static function leaveRoom(Room $room): void
