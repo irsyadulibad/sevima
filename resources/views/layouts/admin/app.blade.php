@@ -51,6 +51,7 @@
   <script src="/assets/stisla/js/scripts.js"></script>
   <script src="/assets/stisla/js/custom.js"></script>
 
+  <x-sweetalert/>
   @stack('script')
 </body>
 </html>

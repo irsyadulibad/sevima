@@ -29,7 +29,7 @@ class RoomController extends Controller
     {
         RoomRepository::create($request->only('name'));
         return redirect()->back()->with('alert_s', 'Room added successfully');
-    }
+    } 
 
     public function update(RoomRequest $request, Room $room)
     {
