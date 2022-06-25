@@ -7,7 +7,7 @@
             <div class="card-body">
                 <form action="{{ route('admin.lessons.update', $lesson) }}" method="post" enctype="multipart/form-data">
                     @method('PUT')
-                    <x-admin.lesson.form :lesson="$lesson"/>
+                    <x-admin.lesson.form :lesson="$lesson" :rooms="$rooms"/>
                 </form>
             </div>
         </div>

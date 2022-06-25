@@ -6,7 +6,7 @@
         <div class="card">
             <div class="card-body">
                 <form action="{{ route('admin.lessons.store') }}" method="post" enctype="multipart/form-data">
-                    <x-admin.lesson.form/>
+                    <x-admin.lesson.form :rooms="$rooms"/>
                 </form>
             </div>
         </div>

@@ -12,11 +12,15 @@ class LessonRepository
     {
         $data['thumbnail'] = static::upThumbnail($data['thumbnail']);
 
-        return Lesson::create([
+        $lesson = Lesson::create([
             'name' => $data['name'],
             'thumbnail' => $data['thumbnail'],
             'description' => $data['description']
         ]);
+
+        $lesson->rooms()->attach($data['rooms']);
+
+        return $lesson;
     }
 
     public static function update(Lesson $lesson, array $data): Lesson
@@ -30,6 +34,9 @@ class LessonRepository
             'thumbnail' => $data['thumbnail'] ?? $lesson->thumbnail,
             'description' => $data['description']
         ]);
+        
+        $lesson->rooms()->detach();
+        $lesson->rooms()->attach($data['rooms']);
 
         return $lesson;
     }

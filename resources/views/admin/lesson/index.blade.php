@@ -43,7 +43,8 @@
             {data: 'DT_RowIndex', searchable: false, orderable: false},
             {data: 'name'},
             {render: (meta, data, row, type) => {
-                return '';
+                const rooms = JSON.parse(row.rooms);
+                return rooms.join(', ');
             }},
             {data: 'description'},
             {render: (meta, data, row, type) => {

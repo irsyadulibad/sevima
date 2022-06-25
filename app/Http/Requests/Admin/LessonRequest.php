@@ -26,6 +26,8 @@ class LessonRequest extends FormRequest
         $method = request()->getMethod();
         $validations = [
             'name' => 'required|string',
+            'rooms' => 'required|array',
+            'rooms.*' => 'numeric|exists:rooms,id',
             'description' => 'required|string'
         ];
 
