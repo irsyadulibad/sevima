@@ -21,6 +21,6 @@ class FrontRedirectController extends Controller
         if(str($prevUrl)->contains('student'))
             return redirect()->route('student.login');
         
-        return redirect('/');
+        return redirect()->route('student.login');
     }
 }
