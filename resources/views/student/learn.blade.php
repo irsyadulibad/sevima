@@ -19,17 +19,21 @@
                 </div>
             </div>
             <div class="card-footer d-flex justify-content-between">
-                <button class="btn btn-secondary">
+                @if ($prev)
+                <a href="{{ route('student.learn.show', $prev) }}" class="btn btn-secondary">
                     <i class="fas fa-angle-left me-2"></i> Previous
-                </button>
+                </a>
+                @endif
                 
                 <a href="{{ route('student.lessons.show', $item->lesson) }}" class="btn btn-light">
                     <i class="fas fa-book me-2"></i> Back to Lesson
                 </a>
 
-                <button class="btn btn-primary">
+                @if ($next)
+                <a href="{{ route('student.learn.show', $next) }}" class="btn btn-primary">
                     Next <i class="fas fa-angle-right ms-2"></i>
-                </button>
+                </a> 
+                @endif
             </div>
         </div>
     </div>

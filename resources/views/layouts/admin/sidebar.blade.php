@@ -10,7 +10,7 @@
         <li class="menu-header">Dashboard</li>
         <li class=" @active('admin.dashboard') ">
           <a class="nav-link" href="{{ route('admin.dashboard') }}">
-            <i class="fas fa-fire"></i> <span>Credits</span>
+            <i class="fas fa-fire"></i> <span>Dashboard</span>
           </a>
         </li>
         <li class="menu-header">Academic</li>
